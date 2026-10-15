@@ -1,0 +1,80 @@
+{
+  "_avertissement": "Liste de départ À VÉRIFIER (noms, services, horaires) avant la démo. Ajouter les numéros seulement s'ils sont confirmés.",
+  "villes": [
+    {
+      "nom": "Ouagadougou",
+      "centres": [
+        {
+          "nom": "CHU Yalgado Ouédraogo",
+          "service": "Gynécologie / oncologie",
+          "infos": ""
+        },
+        {
+          "nom": "CHU de Bogodogo",
+          "service": "Gynécologie",
+          "infos": "diagnostic moléculaire MammaTyper disponible"
+        },
+        {
+          "nom": "CHU de Tengandogo",
+          "service": "Gynécologie",
+          "infos": ""
+        }
+      ]
+    },
+    {
+      "nom": "Bobo-Dioulasso",
+      "centres": [
+        {
+          "nom": "CHU Sourô Sanou",
+          "service": "Gynécologie",
+          "infos": ""
+        },
+        {
+          "nom": "CHU de Pala",
+          "service": "Gynécologie",
+          "infos": "diagnostic moléculaire MammaTyper disponible"
+        }
+      ]
+    },
+    {
+      "nom": "Koudougou",
+      "centres": [
+        {
+          "nom": "CHU de Koudougou",
+          "service": "Gynécologie",
+          "infos": ""
+        }
+      ]
+    },
+    {
+      "nom": "Ouahigouya",
+      "centres": [
+        {
+          "nom": "CHU de Ouahigouya",
+          "service": "Gynécologie",
+          "infos": ""
+        }
+      ]
+    },
+    {
+      "nom": "Fada N'Gourma",
+      "centres": [
+        {
+          "nom": "CHR de Fada N'Gourma",
+          "service": "Gynécologie",
+          "infos": ""
+        }
+      ]
+    },
+    {
+      "nom": "Kaya",
+      "centres": [
+        {
+          "nom": "CHR de Kaya",
+          "service": "Gynécologie",
+          "infos": ""
+        }
+      ]
+    }
+  ]
+}

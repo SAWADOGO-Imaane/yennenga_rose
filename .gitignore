@@ -1,0 +1,8 @@
+.env
+.venv/
+tmp/
+__pycache__/
+.pytest_cache/
+data/etat_bot.pickle
+data/etat_whatsapp.json
+ngrok.exe

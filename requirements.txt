@@ -1,0 +1,30 @@
+# --- Indispensable ---
+python-telegram-bot[job-queue]>=21.0
+python-dotenv
+scikit-learn
+openai              # client pour toute API compatible (Groq, OpenAI, Mistral...)
+
+# --- WhatsApp (Twilio) ---
+fastapi
+uvicorn
+twilio
+python-multipart
+requests
+
+# --- Transcription des vocaux en français ---
+faster-whisper
+
+# --- Démo web de secours ---
+gradio
+
+# --- Synthèse vocale des réponses en français (optionnel) ---
+gTTS
+
+# --- Tests ---
+pytest
+
+# --- Mooré / dioula (expérimental, lourd : ~4 Go) ---
+# Décommenter puis mettre ACTIVER_MMS=1 dans .env
+# torch
+# transformers
+# soundfile
