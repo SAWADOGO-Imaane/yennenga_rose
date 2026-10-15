@@ -118,6 +118,14 @@ TEXTES = {
         "Tapez 0 pour revenir au menu."
     ),
     "question_suite": "Vous pouvez poser une autre question, ou taper 0 pour le menu.",
+    "question_inconnue": (
+        "Je n'ai pas d'information fiable pour répondre à cette question. "
+        "Parlez-en à un agent de santé : il saura vous répondre."
+    ),
+    "rappel_symptome": (
+        "👉 Si vous avez remarqué un de ces signes, tapez 0 puis 2 pour répondre à quelques "
+        "questions et savoir où consulter."
+    ),
     "pas_compris_vocal": (
         "Je n'ai pas bien compris votre message vocal. Utilisez le menu avec les "
         "chiffres, ou parlez-en à un agent de santé."

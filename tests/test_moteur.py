@@ -144,3 +144,19 @@ def test_octobre_gratuit(monkeypatch):
     moteur.traiter(etat, "4")
     r = moteur.traiter(etat, "1")
     assert any(x.cle == "info_octobre" for x in r)
+
+
+def test_chiffre_en_mode_question_ouvre_le_menu():
+    etat = demarrer()
+    moteur.traiter(etat, "5")
+    r = moteur.traiter(etat, "Trois", vocal_langue="fr")
+    assert r[0].cle == "signes_alerte"
+
+
+def test_question_vocale_repond_avec_passage_et_cle_audio():
+    etat = demarrer()
+    moteur.traiter(etat, "5")
+    r = moteur.traiter(etat, "Est-ce que le cancer du sein est contagieux ?", vocal_langue="fr")
+    assert r[0].cle.startswith("docs/") and "contagieux" in r[0].texte
+    r = moteur.traiter(etat, "J'ai une boule dans le sein, c'est grave ?", vocal_langue="fr")
+    assert any(x.cle == "rappel_symptome" for x in r)

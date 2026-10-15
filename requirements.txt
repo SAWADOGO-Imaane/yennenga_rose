@@ -19,6 +19,7 @@ gradio
 
 # --- Synthèse vocale des réponses en français (optionnel) ---
 gTTS
+edge-tts
 
 # --- Tests ---
 pytest

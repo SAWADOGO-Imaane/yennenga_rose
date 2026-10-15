@@ -199,9 +199,28 @@ class Moteur:
         return reponses + self._menu(etat)
 
     def _traiter_question(self, etat, message, vocal_langue):
+        # Un simple chiffre ("3", "trois") en mode question = un choix du menu
+        choix = lire_choix(message)
+        if etat.get("mode") == "question" and choix is not None and 1 <= choix <= 7 \
+                and len(message.split()) <= 2:
+            etat["mode"] = "menu"
+            return self._traiter_menu(etat, message, vocal_langue)
         etat["mode"] = "question"
         if vocal_langue in ("mos", "dyu"):
             return [self._msg(etat, "vocal_langue_locale")] + self._menu(etat)
+        if vocal_langue == "fr":
+            # Question posée en VOCAL : on répond avec le passage validé, dont la voix
+            # a été fabriquée à l'avance (instantané, même avec une connexion lente).
+            from rag import cle_passage, nettoyer_markdown, parle_de_symptome
+            passage = self.rag.meilleur_passage(message)
+            if passage is None:
+                reponses = [self._msg(etat, "question_inconnue")]
+            else:
+                reponses = [Reponse(nettoyer_markdown(passage), cle=cle_passage(passage))]
+                if parle_de_symptome(message):
+                    reponses.append(self._msg(etat, "rappel_symptome"))
+            return reponses + [self._msg(etat, "question_suite", CLAVIER_RETOUR)]
+
         reponse = self.rag.repondre(message)
         return [
             Reponse(reponse, lire_a_voix_haute=True),
